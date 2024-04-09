@@ -65,7 +65,7 @@ public class TraitementFichiers {
                                 resultat = nombre1 * nombre2;
                                 break;
                             default:
-                                throw new IllegalArgumentException("Opérateur non valide.");
+                                throw new IllegalArgumentException("Opérateur non valid.");
                         }
                         writer.write(String.valueOf(resultat) + "\n");
                     } catch (NumberFormatException e) {
