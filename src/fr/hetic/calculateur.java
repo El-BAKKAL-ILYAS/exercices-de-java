@@ -2,24 +2,17 @@ package fr.hetic;
 
 public class calculateur {
 	public static void main(String[] args) {
-
-        if (args.length != 3) {
-            System.out.println("Usage: java Calculateur <nombre1> <nombre2> <opérateur>");
+        if (args.length != 1) {
+            System.out.println("Usage: java Calculateur <nomFichier>");
             return;
         }
 
+        String fileName = args[0];
+        TraitementFichiers fileProcessor = new TraitementFichiers();
+        fileProcessor.processFile(fileName);
+    }
 
-        double nombre1, nombre2;
-        try {
-            nombre1 = Double.parseDouble(args[0]);
-            nombre2 = Double.parseDouble(args[1]);
-        } catch (NumberFormatException e) {
-            System.out.println("Les deux premiers arguments doivent être des nombres.");
-            return;
-        }
-
-
-        String operateur = args[2];
+    public static double calculer(double nombre1, double nombre2, String operateur) {
         double resultat;
         switch (operateur) {
             case "+":
@@ -32,11 +25,8 @@ public class calculateur {
                 resultat = nombre1 * nombre2;
                 break;
             default:
-                System.out.println("Opérateur non valide. Utilisez '+', '-' ou '*'.");
-                return;
+                throw new IllegalArgumentException("Opérateur non valide. Utilisez '+', '-' ou '*'.");
         }
-
-
-        System.out.println("Résultat de l'opération: " + resultat);
+        return resultat;
     }
 }
