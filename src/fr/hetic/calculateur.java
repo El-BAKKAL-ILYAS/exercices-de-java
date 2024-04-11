@@ -14,7 +14,7 @@ package fr.hetic;
 	            nombre1 = Double.parseDouble(args[0]);
 	            nombre2 = Double.parseDouble(args[1]);
 	        } catch (NumberFormatException e) {
-	            System.out.println("Les deux premiers paramètres doivent être numériques.");
+	            System.out.println("Les deux premiers paramètres doivent être numérique.");
 	            return;
 	        }
 
