@@ -22,7 +22,7 @@ public class FileProcessor {
         fileProcessor.processFile("mon_fichier.txt", (String line) -> {
             String[] parts = line.split(" ");
             if (parts.length != 3) {
-                System.out.println("Erreur: chaque ligne doit contenir un nombre, un opérateur et un autre nombre.");
+                System.out.println("Erreur: chaques ligne doit contenir un nombre, un opérateur et un autre nombre.");
                 return;
             }
 
