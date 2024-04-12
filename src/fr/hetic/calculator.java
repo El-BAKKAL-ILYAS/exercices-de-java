@@ -9,7 +9,10 @@ public class calculator {
 
 	        String fileName = args[0];
 	        FileProcessor fileProcessor = new FileProcessor();
-	        fileProcessor.processFile(fileName);
+	        fileProcessor.processFile(fileName, (String line) -> {
+	            // Votre traitement de chaque ligne ici
+	        });
+
 	    }
 
 	    public static double calculer(double nombre1, double nombre2, String operateur) {
